@@ -11,12 +11,10 @@ resource "aws_launch_configuration" "lc1" {
   key_name = "${aws_key_pair.my1key.key_name}"
   associate_public_ip_address = "true"
   user_data = <<EOF
- {
-     #!/bin/bash
-     sudo apt update
-     sudo apt install nginx -y
- }
- EOF
+#!/bin/bash
+sudo apt update
+sudo apt install nginx -y
+  EOF
 connection {
     user = "ubuntu"
     private_key = "${file("my1key")}"
