@@ -4,9 +4,9 @@ resource "aws_autoscaling_group" "asg-1" {
   min_size             = 1
   max_size             = 3
   health_check_grace_period = 300
-  health_check_type         = "EC2"
+  health_check_type         = "ELB"
   desired_capacity          = 1
-  vpc_zone_identifier = ["subnet-08f6df21dce1135d3","subnet-01b919307a1867fe4"]
+  vpc_zone_identifier = ["subnet-0359529ae722009ee","subnet-0af7fd9769f8bb031"]
   tag {
     key                 = "Name"
     value               = "asg"
